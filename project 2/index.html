@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindfulness and Meditation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+            color: #fff;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 50px;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 20px;
+            color: #ffe5d1;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 20px;
+        }
+
+        .container {
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #ff5e62;
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff9966;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .divider {
+            margin: 40px 0;
+            border: 0;
+            height: 2px;
+            background: #ffe5d1;
+        }
+
+        .meditation-style {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to Mindfulness and Meditation</h1>
+        <p>
+            <strong>Find your inner peace</strong> and <em>reduce stress</em> through mindfulness. Learn meditation techniques that help you connect with the present moment.
+            Our platform offers guided meditations for <span>beginners</span> and advanced practitioners alike.
+        </p>
+        <img src="https://via.placeholder.com/600x300" alt="Meditation Image">
+        <h2>Choose Your Meditation Journey</h2>
+        <p>Before we begin, please let us know your name and select your preferred style of meditation.</p>
+
+        <button onclick="startJourney()">Begin Your Journey</button>
+
+        <hr class="divider">
+
+        <p class="meditation-style" id="meditationStyle">Your preferred meditation style will appear here!</p>
+    </div>
+
+    <script>
+        function startJourney() {
+            // Get the user's name
+            let name = prompt("What's your name?");
+            
+            if (name) {
+                // Choose the meditation style
+                let style = prompt("Hello " + name + "! Choose your meditation style: 1) Guided 2) Mantra 3) Breath-focused");
+                
+                if (style == "1") {
+                    document.getElementById("meditationStyle").innerHTML = name + ", you chose <strong>Guided Meditation</strong>. Let's focus on relaxation.";
+                    alert("Enjoy a peaceful guided meditation session.");
+                } else if (style == "2") {
+                    document.getElementById("meditationStyle").innerHTML = name + ", you chose <strong>Mantra Meditation</strong>. Chant your way to peace.";
+                    alert("Repeat your mantra and embrace the calm.");
+                } else if (style == "3") {
+                    document.getElementById("meditationStyle").innerHTML = name + ", you chose <strong>Breath-focused Meditation</strong>. Focus on your breath.";
+                    alert("Breathe in... Breathe out...");
+                } else {
+                    document.getElementById("meditationStyle").innerHTML = "No valid meditation style chosen.";
+                    alert("Please choose a valid option (1, 2, or 3).");
+                }
+            } else {
+                alert("Please provide your name to start the journey.");
+            }
+        }
+    </script>
+
+</body>
+</html>
