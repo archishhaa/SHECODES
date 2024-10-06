@@ -5,122 +5,174 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mindfulness and Meditation</title>
     <style>
+        /* Global Body Styling */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #ff9966, #ff5e62);
-            color: #fff;
+            background: linear-gradient(135deg, #a3c9c9, #f3eacb);
+            color: #2C2C54;
             text-align: center;
+            transition: background 0.3s ease-in-out;
         }
 
+        /* Main Container Styling */
+        .container {
+            margin: 0 auto;
+            padding: 50px;
+            max-width: 700px;
+            background-color: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Heading Styling */
         h1 {
-            margin-top: 50px;
             font-size: 3rem;
-            font-weight: bold;
+            font-weight: 800;
+            color: #2F4858;
+            margin-bottom: 20px;
         }
 
         h2 {
-            font-size: 2rem;
-            margin-top: 20px;
-            color: #ffe5d1;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #536878;
+            margin-top: 30px;
         }
 
+        /* Paragraph Styling */
         p {
             font-size: 1.2rem;
             line-height: 1.8;
-            margin: 20px;
+            color: #4B6584;
+            margin: 20px 0;
         }
 
-        .container {
-            margin: 0 auto;
-            padding: 20px;
-            max-width: 600px;
-            background-color: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
+        strong {
+            color: #1C3A3E;
+            font-weight: bold;
         }
 
+        em {
+            font-style: italic;
+            color: #4B6584;
+        }
+
+        /* Image Styling */
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button Styling */
         button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1rem;
-            color: #ff5e62;
-            background-color: #fff;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffffff;
+            background-color: #5DA3FA;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.3s, box-shadow 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         button:hover {
-            background-color: #ff9966;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            background-color: #478FFF;
+            transform: scale(1.05);
         }
 
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Divider Styling */
         .divider {
-            margin: 40px 0;
+            margin: 50px 0;
             border: 0;
             height: 2px;
-            background: #ffe5d1;
+            background-color: #C8D8E4;
         }
 
+        /* Meditation Style Text */
         .meditation-style {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #3C5977;
+            transition: color 0.3s ease;
         }
 
-        img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 20px;
+        .meditation-style span {
+            color: #4A69BD;
+        }
+
+        /* Footer and Links */
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Welcome to Mindfulness and Meditation</h1>
+        <h1>Elevate Your Mind: Mindfulness & Meditation</h1>
         <p>
-            <strong>Find your inner peace</strong> and <em>reduce stress</em> through mindfulness. Learn meditation techniques that help you connect with the present moment.
-            Our platform offers guided meditations for <span>beginners</span> and advanced practitioners alike.
+            <strong>Harness tranquility</strong> and <em>unleash inner harmony</em> with our curated mindfulness journeys. Whether you're a beginner or an advanced practitioner, our tailored techniques will help you cultivate <strong>serenity</strong> and awaken your senses to the present moment.
         </p>
-        <img src="https://via.placeholder.com/600x300" alt="Meditation Image">
-        <h2>Choose Your Meditation Journey</h2>
-        <p>Before we begin, please let us know your name and select your preferred style of meditation.</p>
+        <img src="https://www.freepik.com/premium-ai-image/peaceful-landscape-with-beautiful-nature-environment_37909327.htm">
+        <h2>Commence Your Mindful Journey</h2>
+        <p>Before we begin, kindly introduce yourself and select your preferred meditation style to embark on a transformative experience.</p>
 
-        <button onclick="startJourney()">Begin Your Journey</button>
+        <button onclick="startMeditationJourney()">Start Your Journey</button>
 
         <hr class="divider">
 
-        <p class="meditation-style" id="meditationStyle">Your preferred meditation style will appear here!</p>
+        <p class="meditation-style" id="meditationStyle">Your meditation style will be displayed here!</p>
     </div>
 
     <script>
-        function startJourney() {
-            // Get the user's name
-            let name = prompt("What's your name?");
+        function startMeditationJourney() {
+            let userName = prompt("Greetings! Kindly share your name to start your mindfulness journey:");
             
-            if (name) {
-                // Choose the meditation style
-                let style = prompt("Hello " + name + "! Choose your meditation style: 1) Guided 2) Mantra 3) Breath-focused");
-                
-                if (style == "1") {
-                    document.getElementById("meditationStyle").innerHTML = name + ", you chose <strong>Guided Meditation</strong>. Let's focus on relaxation.";
-                    alert("Enjoy a peaceful guided meditation session.");
-                } else if (style == "2") {
-                    document.getElementById("meditationStyle").innerHTML = name + ", you chose <strong>Mantra Meditation</strong>. Chant your way to peace.";
-                    alert("Repeat your mantra and embrace the calm.");
-                } else if (style == "3") {
-                    document.getElementById("meditationStyle").innerHTML = name + ", you chose <strong>Breath-focused Meditation</strong>. Focus on your breath.";
-                    alert("Breathe in... Breathe out...");
-                } else {
-                    document.getElementById("meditationStyle").innerHTML = "No valid meditation style chosen.";
-                    alert("Please choose a valid option (1, 2, or 3).");
+            if (userName && userName.trim() !== "") {
+                let meditationChoice = prompt(`Welcome, ${userName}! Choose your meditation style: \n1) Guided Meditation \n2) Mantra Chanting \n3) Breath Awareness`);
+
+                switch (meditationChoice) {
+                    case "1":
+                        document.getElementById("meditationStyle").innerHTML = `${userName}, you've selected <span>Guided Meditation</span>. Let the calming voice guide your journey.`;
+                        alert("Get ready for a soothing guided meditation experience.");
+                        break;
+                    case "2":
+                        document.getElementById("meditationStyle").innerHTML = `${userName}, you've chosen <span>Mantra Chanting</span>. Let your mantra resonate within you and bring you peace.`;
+                        alert("Start repeating your mantra and immerse in its vibrations.");
+                        break;
+                    case "3":
+                        document.getElementById("meditationStyle").innerHTML = `${userName}, you've opted for <span>Breath Awareness</span>. Focus on your breath to ground yourself in the moment.`;
+                        alert("Inhale... Exhale... Feel the calmness flow through you.");
+                        break;
+                    default:
+                        document.getElementById("meditationStyle").innerHTML = "No valid meditation style selected. Please try again.";
+                        alert("Please choose a valid option (1, 2, or 3).");
+                        break;
                 }
             } else {
-                alert("Please provide your name to start the journey.");
+                alert("Please enter your name to proceed with the mindfulness journey.");
             }
         }
     </script>
